@@ -42,9 +42,7 @@ var paused,
     keyRepeatFrameCounter,
     viewTick,
     selectedStorm,
-    renderToDo,
-    oldMouseX,
-    oldMouseY;
+    renderToDo;
 
 function setup(){
     setVersion(TITLE + " v",VERSION_NUMBER);
@@ -123,6 +121,12 @@ function setup(){
 }
 
 function draw(){
+
+    // the old position o the mouse
+    let oldMouseX, oldMouseY;
+
+    // TODO: don't have a giant try-block for a massive segment of code. only try the things that could actually
+    // have an exception, then explicitly catch those exceptions
     try{
         scale(scaler);
         background(COLORS.bg);
